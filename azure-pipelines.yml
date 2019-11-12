@@ -1,0 +1,15 @@
+trigger:
+- master
+
+pool:
+  name: Default
+  demands:
+  - msbuild
+  - visualstudio
+
+steps:
+- task: VSBuild@1
+  displayName: 'Build solution **\*.sln'
+  inputs:
+    platform: x86
+    configuration: release
